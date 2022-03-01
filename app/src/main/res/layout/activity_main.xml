@@ -66,4 +66,27 @@
         android:background="#D5E3EA"
         />
 
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:id="@+id/toggle_visibility"
+        android:src="@mipmap/eye_1_foreground"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:id="@+id/toggle_invisibility"
+        android:src="@mipmap/eye_2_foreground"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+
+        android:visibility="invisible"
+        />
+
 </RelativeLayout>

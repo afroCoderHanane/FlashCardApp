@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/card_background.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable/eye_1_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/eye_2_background.xml" value="0.1345" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/eye_1.xml" value="0.1" />
       </map>
     </option>
   </component>
