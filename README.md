@@ -20,9 +20,8 @@
 `TODO://` Add app description
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+![Peek 2022-03-17 15-06](https://user-images.githubusercontent.com/49354774/158878146-2f344cb3-1651-498e-a517-1a0973ee4f11.gif)
 
 `
 ## Required
