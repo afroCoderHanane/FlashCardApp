@@ -88,5 +88,18 @@
 
         android:visibility="invisible"
         />
+    <!-- Part 2 of lab -->
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:id="@+id/add_activity"
+        android:src="@drawable/add_icon"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        />
 
 </RelativeLayout>

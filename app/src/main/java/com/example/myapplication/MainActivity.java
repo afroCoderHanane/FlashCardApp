@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,8 @@ import android.widget.TextView;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView flashCardQuestion;
+    TextView flashCardAnswer;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +24,18 @@ public class MainActivity extends AppCompatActivity {
         AtomicBoolean isShowAnswers = new AtomicBoolean(false);
 
 
-        TextView flashCardQuestion = findViewById(R.id.flashcard_question);
-        TextView flashCardAnswer= findViewById(R.id.flashcard_answer);
+        flashCardQuestion = findViewById(R.id.flashcard_question);
+        flashCardAnswer= findViewById(R.id.flashcard_answer);
         TextView fcAnswer1 = findViewById(R.id.answer1);
         TextView fcAnswer2 = findViewById(R.id.answer2);
         TextView fcAnswer3 = findViewById(R.id.answer3);
 
         ImageView eye_open = findViewById(R.id.toggle_visibility);
         ImageView eye_close = findViewById(R.id.toggle_invisibility);
+
+        //variable for add new card activity March 12
+
+        ImageView add_card_activity = findViewById(R.id.add_activity);
 
         eye_open.setOnClickListener(v ->{
             eye_open.setImageResource(R.mipmap.eye_2_foreground);
@@ -89,6 +95,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //add card activity March 16 2022
+        add_card_activity.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, Add_Card_Actvity.class);
+            MainActivity.this.startActivityForResult(intent, 100);
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            if (null != data) {
+                String question = data.getExtras().getString("question_key");
+                String answer = data.getExtras().getString("answer_key");
 
+                flashCardQuestion.setText(question);
+                flashCardAnswer.setText(answer);
+
+            }
+        }
     }
 }
