@@ -4,7 +4,8 @@
 
 ### App Description
 
-> Add activity to card
+> Add a new activity to card when the add icon is press and allow user to edit button the previous
+> question and answer that is returned to mainActivity
 > 
 > IDE: Android Studio
 > 
@@ -14,14 +15,10 @@
 > 
 > required + optional repo = master 
 
-## Lab 2
-
-### App Description
-`TODO://` Add app description
-
 ### App Walk-though
 
-![Peek 2022-03-17 15-06](https://user-images.githubusercontent.com/49354774/158878146-2f344cb3-1651-498e-a517-1a0973ee4f11.gif)
+![lab2_codepath](https://user-images.githubusercontent.com/49354774/159077518-1b74c715-e03f-4189-81fd-07d11a4bdbe3.gif)
+
 
 `
 ## Required
