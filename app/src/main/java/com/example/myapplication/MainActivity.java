@@ -10,11 +10,18 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainActivity extends AppCompatActivity {
     TextView flashCardQuestion;
     TextView flashCardAnswer;
+    FlashcardDatabase flashcardDatabase;
+    List<Flashcard> allFlashcards;
+    int currentCardDisplayIndex = 0;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
 
         flashCardQuestion = findViewById(R.id.flashcard_question);
         flashCardAnswer= findViewById(R.id.flashcard_answer);
+
+        flashcardDatabase = new FlashcardDatabase(this);
+        allFlashcards = flashcardDatabase.getAllCards();
+        ImageView next_button = findViewById(R.id.next_button);
+
+
+
+        if (allFlashcards!=null &&allFlashcards.size()>0){
+            flashCardQuestion.setText(allFlashcards.get(0).getQuestion());
+            flashCardAnswer.setText(allFlashcards.get(0).getAnswer());
+        }
+
         TextView fcAnswer1 = findViewById(R.id.answer1);
         TextView fcAnswer2 = findViewById(R.id.answer2);
         TextView fcAnswer3 = findViewById(R.id.answer3);
@@ -36,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         //variable for add new card activity March 12
 
         ImageView add_card_activity = findViewById(R.id.add_activity);
+
+        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
 
         eye_open.setOnClickListener(v ->{
             eye_open.setImageResource(R.mipmap.eye_2_foreground);
@@ -100,6 +121,26 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, Add_Card_Actvity.class);
             MainActivity.this.startActivityForResult(intent, 100);
         });
+
+        next_button.setOnClickListener(v->{
+
+            if(allFlashcards.size()==0){
+                return;
+            }
+            currentCardDisplayIndex ++;
+
+            if(currentCardDisplayIndex>=allFlashcards.size()){
+                //Snackbar.make(questionSideView,
+                        //"You've reached the end of the cards, going back to start.", Snackbar.LENGTH_SHORT)
+                        //.show();
+                currentCardDisplayIndex=0;
+            }
+            allFlashcards = flashcardDatabase.getAllCards();
+            Flashcard flashcard = allFlashcards.get(currentCardDisplayIndex);
+            flashCardQuestion.setText(flashcard.getQuestion());
+            flashCardAnswer.setText(flashcard.getAnswer());
+        });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -111,6 +152,9 @@ public class MainActivity extends AppCompatActivity {
 
                 flashCardQuestion.setText(question);
                 flashCardAnswer.setText(answer);
+
+                flashcardDatabase.insertCard(new Flashcard(question, answer));
+                allFlashcards= flashcardDatabase.getAllCards();
 
             }
         }
