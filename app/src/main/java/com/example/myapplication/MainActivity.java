@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         flashcardDatabase = new FlashcardDatabase(this);
         allFlashcards = flashcardDatabase.getAllCards();
         ImageView next_button = findViewById(R.id.next_button);
-
+        ImageView delete_button = findViewById(R.id.delete_button);
 
 
         if (allFlashcards!=null &&allFlashcards.size()>0){
@@ -133,12 +134,41 @@ public class MainActivity extends AppCompatActivity {
                 //Snackbar.make(questionSideView,
                         //"You've reached the end of the cards, going back to start.", Snackbar.LENGTH_SHORT)
                         //.show();
+                Toast.makeText(getApplicationContext(),
+                        "You've reached the end of the cards, going back to start.",
+                        Toast.LENGTH_SHORT
+                        ).show();
                 currentCardDisplayIndex=0;
             }
             allFlashcards = flashcardDatabase.getAllCards();
             Flashcard flashcard = allFlashcards.get(currentCardDisplayIndex);
             flashCardQuestion.setText(flashcard.getQuestion());
             flashCardAnswer.setText(flashcard.getAnswer());
+        });
+
+        delete_button.setOnClickListener(v -> {
+            flashcardDatabase.deleteCard(flashCardQuestion.getText().toString());
+
+//            if(allFlashcards.size()==0){
+//                return;
+//            }
+//            currentCardDisplayIndex --;
+//
+//            if(currentCardDisplayIndex>=allFlashcards.size()){
+//                //Snackbar.make(questionSideView,
+//                //"You've reached the end of the cards, going back to start.", Snackbar.LENGTH_SHORT)
+//                //.show();
+//                Toast.makeText(getApplicationContext(),
+//                        "You've reached the end of the cards, going back to start.",
+//                        Toast.LENGTH_SHORT
+//                ).show();
+//                currentCardDisplayIndex=0;
+//            }
+//
+//            allFlashcards=flashcardDatabase.getAllCards();
+//            Flashcard flashcard = allFlashcards.get(currentCardDisplayIndex+1);
+//            flashCardQuestion.setText(flashcard.getQuestion());
+//            flashCardAnswer.setText(flashcard.getAnswer());
         });
 
     }

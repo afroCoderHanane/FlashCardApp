@@ -19,7 +19,7 @@
         android:background="@drawable/card_background"
         android:elevation="5dp"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         />
 
     <TextView
@@ -31,6 +31,7 @@
         android:gravity="center"
         android:visibility="invisible"
         android:background="#4CAF50"
+        android:layout_marginTop="50dp"
         />
 
     <TextView
@@ -109,6 +110,18 @@
         android:src="@drawable/next_button"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
+        />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:id="@+id/delete_button"
+        android:src="@drawable/delete_button"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+
+
         />
 
 </RelativeLayout>
