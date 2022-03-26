@@ -1,26 +1,22 @@
 # FlashCardApp
 
+📝 `NOTE` Paste this template at the top of your existing `README.md` file from the last lab.
+
 ## Lab 3
 
 ### App Description
-
-> Set a database connection to link and save the cards that will be displayed to users with a delete option 
+`
+>Set a database connection to link and save the cards that will be displayed to users with a delete option 
 > 
 > IDE: Android Studio
 > 
 > Language: Java 
 > 
-> Required repo: optional
-> 
-> required + optional repo = master 
-
 ### App Walk-though
+![qj9O1lx364](https://user-images.githubusercontent.com/49354774/160251948-bd4909c7-a4b6-43eb-951d-c854e11f187d.gif)
 
 
-![qj9O1lx364](https://user-images.githubusercontent.com/49354774/160215554-87f483df-b5be-419f-a7c0-ebc671a6fe75.gif)
-
-
-`## Required
+## Required
 - [x] User can create a card and still see their created card when the app is relaunched.
 - [x] User can create muliple cards and browse through all created cards
 
