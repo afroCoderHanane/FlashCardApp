@@ -12,7 +12,7 @@
 > Language: Java 
 > 
 ### App Walk-though
-![qj9O1lx364](https://user-images.githubusercontent.com/49354774/160251948-bd4909c7-a4b6-43eb-951d-c854e11f187d.gif)
+![Peek 2022-03-31 19-42](https://user-images.githubusercontent.com/49354774/161167085-ca5757e2-a9e6-44dd-b964-d1f0522c6823.gif)
 
 
 ## Required
