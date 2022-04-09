@@ -4,7 +4,7 @@
 ## Lab 4
 
 ### App Description
-`
+
 > Added animation to improve user experience
 > 
 > IDE: Android Studio
@@ -12,8 +12,7 @@
 > Language: Java 
 > 
 ### App Walk-though
-![Peek 2022-03-31 19-42](https://user-images.githubusercontent.com/49354774/161167085-ca5757e2-a9e6-44dd-b964-d1f0522c6823.gif)
-
+![last_lab](https://user-images.githubusercontent.com/49354774/162566913-607ca789-951f-48f8-a076-335289014da2.gif)
 
 
 ## Required
